@@ -9,15 +9,19 @@ public class PlayerController : MonoBehaviour, EventNot {
     public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
     private HashSet<float> timeStamps;
+
 	// Use this for initialization
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();
+        timeStamps = new HashSet<float>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetButtonDown("Fire1"))
         {
+            //add a new timeStamp
+            timeStamps.Add(Time.time);
             if (thisRigid.IsTouching(ground))
             {
                 thisRigid.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -27,7 +31,24 @@ public class PlayerController : MonoBehaviour, EventNot {
                 Debug.Log("not grounded");
             }
         }
+
+        updateSlidingWindow();
 	}
 
-	public void measureStarted(){}
+    //remove all timeStamps older than last second
+    private void updateSlidingWindow()
+    {
+
+    }
+
+    public int getNrBeats()
+    {
+        return timeStamps.Count;
+    }
+
+	public void measureStarted()
+    {
+        Debug.Log("last # beats: " + getNrBeats());
+        timeStamps.Clear();
+    }
 }
