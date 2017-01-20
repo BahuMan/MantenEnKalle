@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, EventNot {
 
 	public SoundMaster sm;
     public float jumpForce = 15f;
@@ -20,4 +20,6 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("jump!");
         }
 	}
+
+	public void measureStarted(){}
 }
