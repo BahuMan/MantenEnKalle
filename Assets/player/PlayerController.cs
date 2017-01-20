@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour, EventNot {
 
+    public Collider2D ground;
 	public SoundMaster sm;
     public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
-
+    private HashSet<float> timeStamps;
 	// Use this for initialization
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();

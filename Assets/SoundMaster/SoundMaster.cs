@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundMaster : MonoBehaviour {
+<<<<<<< HEAD
 	private float nextActionTimer;
 	public bool enemy1_ready;
 	public bool enemy2_ready;
@@ -15,16 +16,17 @@ public class SoundMaster : MonoBehaviour {
 	//public AudioClip[] vp;
 
 	public EventNot parseStart;
+=======
+>>>>>>> 6ed384d55d6ee839c42cad01ef25dd110e8c1460
 
 	// Use this for initialization
 	void Start () {
-		nextActionTimer = Time.time	+ 4;
-		enemy1_ready = false;
-		source = GetComponent < AudioSource > ();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 		if (Time.time >= nextActionTimer) {
 			//parseStart.measureStarted ();
 			if (enemy1_ready) {
@@ -41,3 +43,8 @@ public class SoundMaster : MonoBehaviour {
 }
 
 }
+=======
+		
+	}
+}
+>>>>>>> 6ed384d55d6ee839c42cad01ef25dd110e8c1460
