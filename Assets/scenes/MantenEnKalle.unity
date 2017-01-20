@@ -407,7 +407,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy1_ready: 0
-  vl: []
+  vl:
+  - {fileID: 8300000, guid: a0c0cd0a6658f1046ba8250941189ecf, type: 3}
+  - {fileID: 8300000, guid: cdc903504a55351449ac804f0a87f023, type: 3}
+  - {fileID: 8300000, guid: 66cdc8644a5edc64aac09ec6fea0f551, type: 3}
+  - {fileID: 8300000, guid: 46fb8755e532dd44985f19eee56aa0c8, type: 3}
+  bd: {fileID: 8300000, guid: fac6a7099ed09dc47bc3a8698946bd15, type: 3}
+  pa: {fileID: 8300000, guid: c8910a9733cbc6e4d8d935d42f955262, type: 3}
+  vp:
+  - {fileID: 8300000, guid: 2da3013d2aa7ad341b82f4809cde54e4, type: 3}
+  - {fileID: 8300000, guid: 83b1be5f3af87f64983ad235d151b7a1, type: 3}
+  - {fileID: 8300000, guid: 019adbc4509c3934e96561291d4196d3, type: 3}
+  - {fileID: 8300000, guid: 86cf435af818a2f4598946a73a4a6e51, type: 3}
 --- !u!4 &1150553507
 Transform:
   m_ObjectHideFlags: 0
