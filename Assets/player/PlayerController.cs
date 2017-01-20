@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, EventNot {
 
     public Collider2D ground;
 	public SoundMaster sm;
@@ -29,5 +29,5 @@ public class PlayerController : MonoBehaviour {
         }
 	}
 
-
+	public void measureStarted(){}
 }
