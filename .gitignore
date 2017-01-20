@@ -12,6 +12,7 @@ ExportedObj/
 *.sln
 *.suo
 *.tmp
+*.sdf
 *.user
 *.userprefs
 *.pidb
