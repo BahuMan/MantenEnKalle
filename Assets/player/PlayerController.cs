@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
 
+    public Collider2D ground;
 	public SoundMaster sm;
     public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
-
+    private HashSet<float> timeStamps;
 	// Use this for initialization
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();
@@ -16,8 +18,16 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("Fire1"))
         {
-            thisRigid.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            Debug.Log("jump!");
+            if (thisRigid.IsTouching(ground))
+            {
+                thisRigid.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Debug.Log("not grounded");
+            }
         }
 	}
+
+
 }
