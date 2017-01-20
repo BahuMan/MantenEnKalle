@@ -3,6 +3,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour {
 
+	public SoundMaster sm;
     public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
 
