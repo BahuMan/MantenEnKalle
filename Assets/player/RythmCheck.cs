@@ -13,6 +13,8 @@ public class RythmCheck : MonoBehaviour {
 	public float SCORE = 0;
 	public int TICK = 0;
 
+	public bool doCheckWithFase = true;
+
 	void Start() {
 		player = GetComponent<PlayerController> ();
 	}
@@ -21,7 +23,14 @@ public class RythmCheck : MonoBehaviour {
 	public int rythmCheck()
 	{
 		//copying timestamps from playercontroller
-		List<float> timeStamp2 = player.getTimeStamp ();
+		List<float> timeStamp = player.getTimeStamp ();
+		List<float> timeStamp2 = new List<float>();
+		float startOfRange = Time.time - period * 1.2f;
+		foreach (float spacebarTime in timeStamp) {
+			if (spacebarTime > startOfRange) {
+				timeStamp2.Add (spacebarTime);
+			}
+		}
 
 		BESTRYTHM = -1;
 		SCORE = 0;
@@ -58,9 +67,12 @@ public class RythmCheck : MonoBehaviour {
 				}
 			}
 
-			int expectedCorrect = tapCount + tapCount - 1;
-
-			float percentCorrect = (correctCount) * 1f / (tapCount - 1);
+			float percentCorrect = 0;
+			if (doCheckWithFase) {
+				percentCorrect = (correctCount+faseCorrectCount) * 1f / (tapCount + tapCount - 1);
+			} else {
+				percentCorrect = (correctCount) * 1f / (tapCount - 1);
+			}
 			if (percentCorrect > SCORE) {
 				SCORE = percentCorrect;
 				BESTRYTHM = tapCount;
