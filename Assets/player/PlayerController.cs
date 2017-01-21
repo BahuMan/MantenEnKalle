@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour, EventNot {
 		if (tempC == 240) {
 			check.rythmCheck ();
 			tempC = 0;
-			print (check.rythm);
+			Debug.Log("Rythm: " + check.rythm);
 		}
 		
 		tempC++;

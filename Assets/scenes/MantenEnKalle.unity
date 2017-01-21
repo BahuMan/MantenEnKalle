@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 437631720}
   - component: {fileID: 437631719}
   - component: {fileID: 437631718}
+  - component: {fileID: 437631722}
   - component: {fileID: 437631721}
   m_Layer: 8
   m_Name: Player
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 437631717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2b43534cb0a90479232c2637ef97ce, type: 3}
+  m_Script: {fileID: 11500000, guid: dbc40a8ea5cd14d46847aa111b956346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blastPrefab: {fileID: 1018009499508884, guid: e9926806a14d1b7468a57fdaf821760a,
@@ -218,6 +219,21 @@ MonoBehaviour:
   ground: {fileID: 1824965964}
   sm: {fileID: 1150553506}
   jumpForce: 50
+--- !u!114 &437631722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437631717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e526f89963b91d478482e37db2a11d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  period: 4
+  top: 0
+  acceptedDifference: 0.1
+  rythm: 0
 --- !u!4 &453258884 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4708645868668298, guid: f3b5833e8d0a81a4ca763ba477da5c81,

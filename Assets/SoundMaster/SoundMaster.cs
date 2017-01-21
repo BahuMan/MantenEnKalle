@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundMaster : MonoBehaviour {
-	private float nextActionTimer;
-	private AudioSource source;
+    const float BEAT_DURATION = 4;
+    const float MAIN_DURATION = 3*BEAT_DURATION;
+
+	private float nextActionTimer = 0;
+    private float nextMainTimer = 0;
+    private AudioSource source;
 	public AudioClip[] vl;
 	public AudioClip bd;
+    public AudioClip mainTheme;
 	private GameController controller;
 	//public AudioClip pa;
 	//public AudioClip[] vp;
@@ -15,8 +20,7 @@ public class SoundMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		nextActionTimer = Time.time + 4;
-		source = GetComponent<AudioSource> ();
+        source = GetComponent<AudioSource> ();
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent < GameController > ();
 	}
 
@@ -29,21 +33,24 @@ public class SoundMaster : MonoBehaviour {
             //parseStart.measureStarted ();
 
 
-			if (controller.GetNrEnemiesForFrequency(0) > 0)
+			if (controller.GetNrEnemiesForFrequency(8) > 0)
             {
                 int soundSelector = Random.Range(0, vl.Length - 1);
                 source.PlayOneShot(vl[soundSelector]);
             }
 
-			if (controller.GetNrEnemiesForFrequency(0) > 0)
+			if (controller.GetNrEnemiesForFrequency(2) > 0)
 			{
 				source.PlayOneShot (bd);
 			}
 				
-            nextActionTimer = Time.time + 4;
-            int soundSelectorS = Random.Range(0, vl.Length);
-            source.PlayOneShot(vl[soundSelectorS]);
-            Debug.Log(soundSelectorS);
+            nextActionTimer = Time.time + BEAT_DURATION;
+        }
+
+        if (Time.time >= nextMainTimer)
+        {
+            source.PlayOneShot(mainTheme);
+            nextMainTimer = Time.time + MAIN_DURATION;
         }
     }
 
