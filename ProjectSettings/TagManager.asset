@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fire
+  - HurtsEnemies
   layers:
   - Default
   - TransparentFX
@@ -38,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: WavesLayer
+    uniqueID: 50891287
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 23964660064814954}
   - component: {fileID: 33803276076245798}
   - component: {fileID: 114329899239685644}
+  - component: {fileID: 114464941172357680}
   m_Layer: 0
   m_Name: singlewaveformprefab
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MonoBehaviour:
   width: 20
   uvxrepeat: 5
   uvyrepeat: 2
-  lineheight: 0.15
+  lineheight: 0.1
   frequency: 20
   speed: 0.1
   waveheight: 1
@@ -110,26 +111,32 @@ MonoBehaviour:
       outSlope: 3.283391
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.03963293
-      value: 0.31310114
+      time: 0.07117983
+      value: 0.009074744
+      inSlope: 0.33819598
+      outSlope: 0.33819598
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.106448084
+      value: 0.32444382
       inSlope: 24.587513
       outSlope: 24.587513
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.0545564
-      value: 0.99248123
+      time: 0.12137155
+      value: 1.0038239
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.08
-      value: 0
+      time: 0.14681515
+      value: 0.0113426745
       inSlope: -0.03337495
       outSlope: -0.03337495
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.16748928
-      value: 0.31445953
+      time: 0.23430443
+      value: 0.3258022
       inSlope: 1.1118128
       outSlope: 1.1118128
       tangentMode: 0
@@ -142,3 +149,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114464941172357680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1238283614819284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75aeaf831a475f547934a29fb7ba3097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingLayer: WavesLayer
+  orderInLayer: 0
