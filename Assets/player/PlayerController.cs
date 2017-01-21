@@ -3,18 +3,20 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour, EventNot {
-
+	
+	private RythmCheck check;
     public Collider2D ground;
 	public SoundMaster sm;
     public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
-    private HashSet<float> timeStamps;
+	private List<float> timeStamp = new List<float>();
+
+	private int tempC = 0;
 
 	// Use this for initialization
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();
-        timeStamps = new HashSet<float>();
-
+		check = GetComponent<RythmCheck> ();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour, EventNot {
         if (Input.GetButtonDown("Fire1"))
         {
             //add a new timeStamp
-            timeStamps.Add(Time.time);
+			timeStamp.Add(Time.time);
             if (thisRigid.IsTouching(ground))
             {
                 thisRigid.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -34,22 +36,37 @@ public class PlayerController : MonoBehaviour, EventNot {
         }
 
         updateSlidingWindow();
+
+		//rythmcheck
+
+		if (tempC == 240) {
+			check.rythmCheck ();
+			tempC = 0;
+			print (check.rythm);
+		}
+		
+		tempC++;
+
+
 	}
 
     //remove all timeStamps older than last second
     private void updateSlidingWindow()
-    {
+        {
 
     }
 
-    public int getNrBeats()
+	public List<float> getTimeStamp()
     {
-        return timeStamps.Count;
+        return timeStamp;
     }
 
 	public void measureStarted()
     {
-        Debug.Log("last # beats: " + getNrBeats());
-        timeStamps.Clear();
+        //Debug.Log("last # beats: " + getNrBeats());
+		timeStamp.Clear();
+        
     }
+
+
 }
