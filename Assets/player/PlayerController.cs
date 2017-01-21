@@ -3,12 +3,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour, EventNot {
-	
+
 	private RythmCheck check;
+
+    public GameObject blastPrefab;
     public Collider2D ground;
 	public SoundMaster sm;
     public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
+
 	private List<float> timeStamp = new List<float>();
 
 	private int tempC = 0;
@@ -68,5 +71,16 @@ public class PlayerController : MonoBehaviour, EventNot {
         
     }
 
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider == ground)
+        {
+            blast();
+        }
+    }
 
+    private void blast()
+    {
+        Instantiate(blastPrefab);
+    }
 }
