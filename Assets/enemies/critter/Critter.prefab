@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50757283468649702}
   - component: {fileID: 61918239146239068}
   - component: {fileID: 114032336310443498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Critter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727820309624304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 204.2, y: 11.3, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalPosition: {x: 13, y: -1.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61918239146239068
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -77,7 +77,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2, y: 1.2}
 --- !u!95 &95043614195429384
 Animator:
   serializedVersion: 3
@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 8
-  speed: 7
+  speed: 2
   particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  theController: {fileID: 0}
 --- !u!212 &212880053921388912
 SpriteRenderer:
   m_ObjectHideFlags: 1

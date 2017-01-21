@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61168937814164510}
   - component: {fileID: 50663437236083004}
   - component: {fileID: 114717936197075614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4328440164619472}
   - component: {fileID: 212796239628991718}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: monster 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285993687380678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 319.8, y: 34.1, z: -44.1875}
+  m_LocalPosition: {x: 14.23, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328440164619472}
@@ -65,9 +65,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287325809232886}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -112.887245, y: -21.106993, z: 44.1875}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4269937165719650}
   m_RootOrder: 0
@@ -91,7 +91,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61168937814164510
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -103,9 +103,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -112, y: -20}
+  m_Offset: {x: -0.04, y: -0.3}
   serializedVersion: 2
-  m_Size: {x: 20, y: 20}
+  m_Size: {x: 0.5, y: 2}
 --- !u!114 &114717936197075614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,9 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699c021a0531caf4e93c1727e666e491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 4
-  speed: 15
+  frequency: 2
+  speed: 1
   particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  theController: {fileID: 0}
 --- !u!212 &212796239628991718
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -150,7 +151,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f7c3adc967d048c469f37dafa2b2ec99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
