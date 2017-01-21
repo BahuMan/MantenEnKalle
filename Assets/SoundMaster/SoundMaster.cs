@@ -17,9 +17,6 @@ public class SoundMaster : MonoBehaviour {
 	void Start () {
 		nextActionTimer = Time.time + 4;
 		source = GetComponent<AudioSource> ();
-		if (source == null) {
-			Debug.Log("NIETGEVONDEN");
-		}
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent < GameController > ();
 	}
 
@@ -32,13 +29,13 @@ public class SoundMaster : MonoBehaviour {
             //parseStart.measureStarted ();
 
 
-			if (controller.GetArrayTypeIndex(0) > 0)
+			if (controller.GetNrEnemiesForFrequency(0) > 0)
             {
                 int soundSelector = Random.Range(0, vl.Length - 1);
                 source.PlayOneShot(vl[soundSelector]);
             }
 
-			if (controller.GetArrayTypeIndex (0) > 0)
+			if (controller.GetNrEnemiesForFrequency(0) > 0)
 			{
 				source.PlayOneShot (bd);
 			}

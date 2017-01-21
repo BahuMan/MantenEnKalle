@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 114863239189569546}
   - component: {fileID: 70726384911121880}
   - component: {fileID: 50755114433950252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DummyEnemy
-  m_TagString: Untagged
+  m_TagString: HurtsEnemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4288388816004856}
   - component: {fileID: 212902758711429360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248965779585040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.908333, y: 0, z: 0}
+  m_LocalPosition: {x: 13.33, y: -0.14, z: 0}
   m_LocalScale: {x: 0.083333336, y: 0.083333336, z: 1}
   m_Children:
   - {fileID: 4288388816004856}
@@ -120,6 +120,7 @@ MonoBehaviour:
   frequency: 0
   speed: 1.25
   particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  theController: {fileID: 0}
 --- !u!212 &212902758711429360
 SpriteRenderer:
   m_ObjectHideFlags: 1
