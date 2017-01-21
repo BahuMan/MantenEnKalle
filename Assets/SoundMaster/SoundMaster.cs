@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class SoundMaster : MonoBehaviour {
 	private float nextActionTimer;
-	public bool enemy1_ready;
-	public bool enemy2_ready;
-	//public bool enemy3_ready;
-	//public bool enemy4_ready;
 	private AudioSource source;
 	public AudioClip[] vl;
 	public AudioClip bd;
+	private GameController controller;
 	//public AudioClip pa;
 	//public AudioClip[] vp;
 
@@ -18,27 +15,34 @@ public class SoundMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		enemy1_ready = false;
-		enemy2_ready = false;
 		nextActionTimer = Time.time + 4;
 		source = GetComponent<AudioSource> ();
 		if (source == null) {
 			Debug.Log("NIETGEVONDEN");
 		}
+		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent < GameController > ();
 	}
 
     // Update is called once per frame
     void Update()
     {
+
         if (Time.time >= nextActionTimer)
         {
             //parseStart.measureStarted ();
-            if (enemy1_ready)
+
+
+			if (controller.GetArrayTypeIndex(0) > 0)
             {
                 int soundSelector = Random.Range(0, vl.Length - 1);
                 source.PlayOneShot(vl[soundSelector]);
-				enemy1_ready = false;
             }
+
+			if (controller.GetArrayTypeIndex (0) > 0)
+			{
+				source.PlayOneShot (bd);
+			}
+				
             nextActionTimer = Time.time + 4;
             int soundSelectorS = Random.Range(0, vl.Length);
             source.PlayOneShot(vl[soundSelectorS]);
