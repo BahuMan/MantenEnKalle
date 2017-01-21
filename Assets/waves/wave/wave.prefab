@@ -95,10 +95,11 @@ MonoBehaviour:
   width: 3
   uvxrepeat: 5
   uvyrepeat: 2
-  lineheight: 0.15
+  lineheight: 1
   frequency: 1
   speed: -2
   waveheight: 1
+  power: 4
   wavemultiplier:
     serializedVersion: 2
     m_Curve:
