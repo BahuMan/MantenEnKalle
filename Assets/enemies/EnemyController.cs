@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //transform.position = transform.position + transform.right * -speed * Time.deltaTime;
-        thisRigid.velocity = transform.right * -speed;
+		thisRigid.velocity = transform.right * -speed + new Vector3(0, thisRigid.velocity.y, 0);
 	}
 
     public int getFrequency()
