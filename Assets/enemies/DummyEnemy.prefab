@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50755114433950252}
   m_Layer: 0
   m_Name: DummyEnemy
-  m_TagString: Untagged
+  m_TagString: HurtsEnemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   frequency: 0
   speed: 15
   particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  theController: {fileID: 0}
 --- !u!212 &212902758711429360
 SpriteRenderer:
   m_ObjectHideFlags: 1
