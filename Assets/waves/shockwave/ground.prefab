@@ -92,12 +92,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepsconfig: 200
-  width: 30
-  uvxrepeat: 5
-  uvyrepeat: 2
-  xrepeat: 10
-  yrepeat: 10
-  groundlineheight: 10
+  width: 20
+  uvxrepeat: 1
+  uvyrepeat: 1
+  xrepeat: 1
+  yrepeat: 1
+  groundlineheight: 5
   wavefrequency: 1.5
   wavealterspeed: 0
   waveheight: 0.3
