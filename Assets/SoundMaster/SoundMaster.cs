@@ -17,9 +17,6 @@ public class SoundMaster : MonoBehaviour {
 	void Start () {
 		nextActionTimer = Time.time + 4;
 		source = GetComponent<AudioSource> ();
-		if (source == null) {
-			Debug.Log("NIETGEVONDEN");
-		}
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent < GameController > ();
 	}
 
