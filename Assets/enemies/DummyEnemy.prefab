@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114863239189569546}
   - component: {fileID: 70726384911121880}
   - component: {fileID: 50755114433950252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DummyEnemy
   m_TagString: HurtsEnemies
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4288388816004856}
   - component: {fileID: 212902758711429360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248965779585040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.908333, y: 0, z: 0}
+  m_LocalPosition: {x: 13.33, y: -0.14, z: 0}
   m_LocalScale: {x: 0.083333336, y: 0.083333336, z: 1}
   m_Children:
   - {fileID: 4288388816004856}

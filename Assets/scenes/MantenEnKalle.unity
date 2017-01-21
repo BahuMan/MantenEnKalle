@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 437631719}
   - component: {fileID: 437631718}
   - component: {fileID: 437631721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: HurtsEnemies
   m_Icon: {fileID: 0}
@@ -280,48 +280,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3b5833e8d0a81a4ca763ba477da5c81, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1039858924
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 13.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056322962588426, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1144423178
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1144423179}
   - component: {fileID: 1144423180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +428,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
