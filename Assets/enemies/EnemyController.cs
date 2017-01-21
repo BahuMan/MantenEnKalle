@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 	public int frequency;
 	public float speed;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,4 +16,10 @@ public class EnemyController : MonoBehaviour {
 	void Update () {
 		transform.position = transform.position + transform.right * -speed * Time.deltaTime;
 	}
+
+    public int getFrequency()
+    {
+        return frequency;
+    }
+
 }

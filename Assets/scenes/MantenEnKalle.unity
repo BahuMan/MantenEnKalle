@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58b7f7a21492fb4396f9ffa102ffc04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1248965779585040, guid: 8edbc6cbca668d54aad46f405fa535ca, type: 2}
+  enemyInterval: 1
 --- !u!1 &437631717
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc40a8ea5cd14d46847aa111b956346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: {fileID: 0}
+  ground: {fileID: 1824965964}
   sm: {fileID: 1150553506}
   jumpForce: 30
 --- !u!1 &1144423178
@@ -383,8 +386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54597147be786341847680eac59318b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1_ready: 0
-  enemy2_ready: 0
   vl:
   - {fileID: 8300000, guid: a0c0cd0a6658f1046ba8250941189ecf, type: 3}
   - {fileID: 8300000, guid: cdc903504a55351449ac804f0a87f023, type: 3}
