@@ -230,10 +230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e526f89963b91d478482e37db2a11d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  period: 4
-  top: 0
+  period: 2
   acceptedDifference: 0.1
-  rythm: 0
+  tapsPerMaat: 080000000400000002000000
+  BESTRYTHM: 0
+  SCORE: 0
+  TICK: 0
 --- !u!4 &453258884 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4708645868668298, guid: f3b5833e8d0a81a4ca763ba477da5c81,

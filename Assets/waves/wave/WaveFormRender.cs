@@ -31,7 +31,7 @@ public class WaveFormRender : BaseWaveFormRenderer {
 
 			float y = Mathf.Sin ((t+speed*Time.timeSinceLevelLoad)*Mathf.PI*2*frequency+Mathf.PI/2);
 			if(y<0) {
-				y = 0;
+				y = 0f;
 			} else {
 				y=Mathf.Pow(y, power);
 			}

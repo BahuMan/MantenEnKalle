@@ -5,53 +5,71 @@ using UnityEngine;
 public class RythmCheck : MonoBehaviour {
 
 	private PlayerController player;
-	public int period = 4;
-	public int top = 1/2;
-	private int counter = 0;
-	private List<float> timeStamp2 = new List<float>();
+	public int period = 2;
 	public float acceptedDifference = 0.1f;
-	public int rythm = 0;
+	public List<int> tapsPerMaat;
 
-	//boolean to check wich rythm
-	private bool[] measureBool = new bool[100];
+	public int BESTRYTHM = 0;
+	public float SCORE = 0;
+	public int TICK = 0;
 
 	void Start() {
 		player = GetComponent<PlayerController> ();
 	}
 
-
-
 	//rythmcheck method
-	public void rythmCheck()
+	public int rythmCheck()
 	{
 		//copying timestamps from playercontroller
-		timeStamp2 = player.getTimeStamp ();
+		List<float> timeStamp2 = player.getTimeStamp ();
 
-		for (int i = 0; i < timeStamp2.Count; i++) {
-			if ((timeStamp2 [i] % period) - i*top <= acceptedDifference && (timeStamp2 [i] % period) - i*top  >= -acceptedDifference) {
-				measureBool [i] = true;
-			} else {
-				measureBool [i] = false;
+		BESTRYTHM = -1;
+		SCORE = 0;
+
+		TICK = (int)((Time.time * 2) % 2);
+
+		for (int i = 0; i < tapsPerMaat.Count; i++) {
+			int tapCount = tapsPerMaat [i];
+			float expectedDifference = period * 1f / tapCount;
+			int startj = timeStamp2.Count-tapCount;
+			if (timeStamp2.Count < tapCount) {
+				continue;
+			}
+			// Check ritme
+			int correctCount = 0;
+			int faseCorrectCount = 0;
+			for (int j = 0; j < tapCount - 1; j++) {
+				// Bereken tijd tussen twee opeenvolgende taps
+				float verschil1 = timeStamp2 [startj+j + 1] - timeStamp2 [startj+j];
+				float error = Mathf.Abs (verschil1 - expectedDifference);
+				if (error < acceptedDifference) {
+					// Tap correct
+					correctCount++;
+				}
+			}
+
+			// Check fase
+			for (int j = 0; j < tapCount; j++) {
+				var perfectTick = Mathf.Round(timeStamp2 [startj+j] / expectedDifference) * expectedDifference;
+				var faseVerschil = Mathf.Abs (perfectTick - timeStamp2 [startj+j]);
+				if (faseVerschil < acceptedDifference) {
+					// Tap correct
+					faseCorrectCount++;
+				}
+			}
+
+			int expectedCorrect = tapCount + tapCount - 1;
+
+			float percentCorrect = (correctCount) * 1f / (tapCount - 1);
+			if (percentCorrect > SCORE) {
+				SCORE = percentCorrect;
+				BESTRYTHM = tapCount;
 			}
 		}
-
-		for (int i = 0; i < timeStamp2.Count; i++) {
-			if (measureBool [i] == true)
-				counter++;	
+		if (SCORE > 0.98f) {
+			return BESTRYTHM;
+		} else {
+			return -1;
 		}
-
-		if (measureBool [1] == true && measureBool [5] == true)
-			rythm = 1;
-
-		if (measureBool [1] == true && measureBool [3] == true && measureBool [5] == true && measureBool [7] == true)
-			rythm = 2;
-
-		if (counter == 8)
-			rythm = 3;	
-	}
-
-	public void reset()
-	{
-		counter = 0;
 	}
 }

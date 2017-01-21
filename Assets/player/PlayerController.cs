@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour, EventNot {
         {
             //add a new timeStamp
 			timeStamp.Add(Time.time);
+
+			// only keep the last 20 taps
+			if (timeStamp.Count > 20) {
+				timeStamp.RemoveAt (0);
+			}
+
             if (thisRigid.IsTouching(ground))
             {
                 thisRigid.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
@@ -38,26 +44,9 @@ public class PlayerController : MonoBehaviour, EventNot {
             }
         }
 
-        updateSlidingWindow();
-
-		//rythmcheck
-
-		if (tempC == 240) {
-			check.rythmCheck ();
-			tempC = 0;
-			Debug.Log("Rythm: " + check.rythm);
-		}
-		
-		tempC++;
-
-
+		// Calculate feedback
+		check.rythmCheck ();
 	}
-
-    //remove all timeStamps older than last second
-    private void updateSlidingWindow()
-        {
-
-    }
 
 	public List<float> getTimeStamp()
     {
@@ -66,9 +55,8 @@ public class PlayerController : MonoBehaviour, EventNot {
 
 	public void measureStarted()
     {
-        //Debug.Log("last # beats: " + getNrBeats());
-		timeStamp.Clear();
-        
+		// Do finale rythmCheck
+		check.rythmCheck ();
     }
 
     public void OnCollisionEnter2D(Collision2D col)
