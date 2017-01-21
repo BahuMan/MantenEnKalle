@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 0
   speed: 15
+  particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!212 &212902758711429360
 SpriteRenderer:
   m_ObjectHideFlags: 1
