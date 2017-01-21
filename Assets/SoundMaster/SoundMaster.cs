@@ -18,7 +18,13 @@ public class SoundMaster : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		enemy1_ready = false;
+		enemy2_ready = false;
+		nextActionTimer = Time.time + 4;
+		source = GetComponent<AudioSource> ();
+		if (source == null) {
+			Debug.Log("NIETGEVONDEN");
+		}
 	}
 
     // Update is called once per frame
@@ -31,6 +37,7 @@ public class SoundMaster : MonoBehaviour {
             {
                 int soundSelector = Random.Range(0, vl.Length - 1);
                 source.PlayOneShot(vl[soundSelector]);
+				enemy1_ready = false;
             }
             nextActionTimer = Time.time + 4;
             int soundSelectorS = Random.Range(0, vl.Length);

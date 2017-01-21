@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour, EventNot {
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();
         timeStamps = new HashSet<float>();
+
 	}
 	
 	// Update is called once per frame
