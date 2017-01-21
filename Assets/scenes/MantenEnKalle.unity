@@ -180,7 +180,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -208,12 +208,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 437631717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbc40a8ea5cd14d46847aa111b956346, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e2b43534cb0a90479232c2637ef97ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blastPrefab: {fileID: 1018009499508884, guid: e9926806a14d1b7468a57fdaf821760a,
+    type: 2}
   ground: {fileID: 1824965964}
   sm: {fileID: 1150553506}
-  jumpForce: 30
+  jumpForce: 300
 --- !u!1 &1144423178
 GameObject:
   m_ObjectHideFlags: 0

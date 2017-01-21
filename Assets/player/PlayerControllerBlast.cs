@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour, EventNot {
+public class PlayerControllerBlast : MonoBehaviour, EventNot {
 
     public GameObject blastPrefab;
     public Collider2D ground;
