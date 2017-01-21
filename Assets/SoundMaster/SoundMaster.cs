@@ -29,13 +29,13 @@ public class SoundMaster : MonoBehaviour {
             //parseStart.measureStarted ();
 
 
-			if (controller.GetArrayTypeIndex(0) > 0)
+			if (controller.GetNrEnemiesForFrequency(0) > 0)
             {
                 int soundSelector = Random.Range(0, vl.Length - 1);
                 source.PlayOneShot(vl[soundSelector]);
             }
 
-			if (controller.GetArrayTypeIndex (0) > 0)
+			if (controller.GetNrEnemiesForFrequency(0) > 0)
 			{
 				source.PlayOneShot (bd);
 			}

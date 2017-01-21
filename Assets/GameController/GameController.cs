@@ -52,9 +52,12 @@ public class GameController : MonoBehaviour {
         }
     }
 
-	public int GetArrayTypeIndex(int type) {
-		int temp = Random.Range (0, 1);
-		return temp;
+	public int GetNrEnemiesForFrequency(int frequency) {
+        if (enemiesPerFrequency.ContainsKey(frequency))
+        {
+            return enemiesPerFrequency[frequency].Count;
+        }
+        else return 0;
 	}
 }
 

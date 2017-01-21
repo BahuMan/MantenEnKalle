@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 114863239189569546}
   - component: {fileID: 70726384911121880}
   - component: {fileID: 50755114433950252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DummyEnemy
-  m_TagString: Untagged
+  m_TagString: HurtsEnemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4288388816004856}
   - component: {fileID: 212902758711429360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248965779585040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 229.9, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.33, y: -0.14, z: 0}
+  m_LocalScale: {x: 0.083333336, y: 0.083333336, z: 1}
   m_Children:
   - {fileID: 4288388816004856}
   m_Father: {fileID: 0}
@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501291463907030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: 12.5, z: 0}
-  m_LocalScale: {x: -6.9451866, y: 6.9451866, z: 0.6945186}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalScale: {x: -10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 4056322962588426}
   m_RootOrder: 0
@@ -84,10 +84,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.1
-  m_LinearDrag: 3
-  m_AngularDrag: 1
-  m_GravityScale: 10
-  m_Material: {fileID: 0}
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: ccdf21282748b2142b9b7c543b7d625a, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -118,8 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 0
-  speed: 15
+  speed: 1.25
   particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  theController: {fileID: 0}
 --- !u!212 &212902758711429360
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -151,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f7c3adc967d048c469f37dafa2b2ec99, type: 3}
-  m_Color: {r: 0.31617647, g: 0.26005995, b: 0.19993512, a: 1}
-  m_FlipX: 1
+  m_Sprite: {fileID: 21300000, guid: 28c6b3a2ec1be8e4591f41b5473e9e00, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
   m_FlipY: 0

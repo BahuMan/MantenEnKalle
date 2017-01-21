@@ -57,5 +57,5 @@ MonoBehaviour:
   - 4
   heightOfBars: 3
   percentUsed: 1.4
-  maatWidth: 2
+  maatWidth: 5
   wavePrefab: {fileID: 1238283614819284, guid: cacf244fc916c244bab24e5ff68bb6b3, type: 2}
