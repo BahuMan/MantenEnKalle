@@ -26,8 +26,17 @@ public class RythmCheck : MonoBehaviour {
 		};
 	}
 
+	public struct RythmData
+	{
+		// Which rythm is perfectly matched (or -1)
+		public int matchrythm;
+
+		public float[] rythmscores;
+		public float[] phasescores;
+	}
+
 	//rythmcheck method
-	public int rythmCheck()
+	public RythmData rythmCheckFull()
 	{
 		float timeSinceMusicStart = Time.time - maatMeasuring;
 
@@ -40,6 +49,9 @@ public class RythmCheck : MonoBehaviour {
 				timeStamp2.Add (spacebarTime-maatMeasuring);
 			}
 		}
+
+		float[] rythmscores = new float[tapsPerMaat.Count];
+		float[] phasescores = new float[tapsPerMaat.Count];
 
 		BESTRYTHM = -1;
 		SCORE = 0;
@@ -67,7 +79,7 @@ public class RythmCheck : MonoBehaviour {
 			}
 
 			// Check fase
-			for (int j = 0; j < tapCount; j++) {
+			for (int j = 1; j < tapCount; j++) {
 				var perfectTick = Mathf.Round(timeStamp2 [startj+j] / expectedDifference) * expectedDifference;
 				var faseVerschil = Mathf.Abs (perfectTick - timeStamp2 [startj+j]);
 				if (faseVerschil < acceptedDifference) {
@@ -76,9 +88,12 @@ public class RythmCheck : MonoBehaviour {
 				}
 			}
 
+			rythmscores [i] = correctCount * 1f / (tapCount - 1);
+			phasescores [i] = faseCorrectCount * 1f / (tapCount -1);
+
 			float percentCorrect = 0;
 			if (doCheckWithFase) {
-				percentCorrect = (correctCount+faseCorrectCount) * 1f / (tapCount + tapCount - 1);
+				percentCorrect = (correctCount+faseCorrectCount) * 1f / (tapCount + tapCount - 2);
 			} else {
 				percentCorrect = (correctCount) * 1f / (tapCount - 1);
 			}
@@ -87,10 +102,21 @@ public class RythmCheck : MonoBehaviour {
 				BESTRYTHM = tapCount;
 			}
 		}
+
+		RythmData data = new RythmData ();
+
 		if (SCORE > 0.98f) {
-			return BESTRYTHM;
+			data.matchrythm = BESTRYTHM;
 		} else {
-			return -1;
+			data.matchrythm = -1;
 		}
+		data.rythmscores = rythmscores;
+		data.phasescores = phasescores;
+		return data;
+	}
+
+	public int rythmCheck()
+	{
+		return rythmCheckFull ().matchrythm;
 	}
 }

@@ -40,9 +40,6 @@ public class PlayerController : MonoBehaviour {
 				timeStamp.RemoveAt (0);
 			}
         }
-
-		// Calculate feedback
-		check.rythmCheck ();
 	}
 
 	public List<float> getTimeStamp()

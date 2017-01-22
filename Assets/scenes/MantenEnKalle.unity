@@ -383,6 +383,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1396017286}
     m_Modifications:
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4708645868668298, guid: f3b5833e8d0a81a4ca763ba477da5c81, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -445,6 +450,56 @@ Prefab:
     - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
         type: 2}
       propertyPath: waveFreq.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: rythm
+      value: 
+      objectReference: {fileID: 437631722}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[0].r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[0].g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[0].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[1].r
+      value: 0.24137926
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[1].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[1].b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[2].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[2].g
+      value: 0.25517225
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120996179690942, guid: f3b5833e8d0a81a4ca763ba477da5c81,
+        type: 2}
+      propertyPath: colors.Array.data[2].b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

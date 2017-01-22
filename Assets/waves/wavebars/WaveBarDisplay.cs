@@ -14,14 +14,21 @@ public class WaveBarDisplay : MonoBehaviour {
 
 	private GameObject[] waves;
 	private WaveFormRender[] waverenderers;
+	private Material[] materials;
+	public Color[] colors;
+	public Color defaultColor = Color.white;
+
+	public RythmCheck rythm;
 
 	// Use this for initialization
 	void Start () {
 		waves = new GameObject[waveFreq.Count];
 		waverenderers = new WaveFormRender[waveFreq.Count];
+		materials = new Material[waveFreq.Count];
 		for (int i = 0; i < waveFreq.Count; i++) {
 			waves[i] = GameObject.Instantiate <GameObject> (wavePrefab, transform);
 			waverenderers [i] = waves [i].GetComponent<WaveFormRender> ();
+			materials[waveFreq.Count - i-1] = waves [i].GetComponent<Renderer> ().material;
 
 			waverenderers [i].waveheight = heightOfBars * percentUsed / 2f / waveFreq.Count;
 			waverenderers [i].frequency = waveFreq [i];
@@ -33,6 +40,9 @@ public class WaveBarDisplay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		RythmCheck.RythmData rythmData = rythm.rythmCheckFull ();
+		for (int i = 0; i < materials.Length; i++) {
+			materials [i].color = Color.Lerp (defaultColor, colors [i], rythmData.rythmscores [i]*rythmData.phasescores [i]);
+		}
 	}
 }
