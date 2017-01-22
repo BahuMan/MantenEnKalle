@@ -6,6 +6,7 @@ public class BlastController : MonoBehaviour {
 
     public float blastSpeed;
     public float maxX = 250;
+    public int blastFrequency;
 
 	// Use this for initialization
 	void Start () {
@@ -21,4 +22,9 @@ public class BlastController : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    public void setFrequency(int f)
+    {
+        this.blastFrequency = f;
+    }
 }
