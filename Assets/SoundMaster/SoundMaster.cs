@@ -52,7 +52,7 @@ public class SoundMaster : MonoBehaviour {
 			enemiesOf8 = controller.GetNrEnemiesForFrequency (8);
 			//int enemiesOf4 = controller.GetNrEnemiesForFrequency (4);
 			enemiesOf2 = controller.GetNrEnemiesForFrequency (2);
-			print (enemiesOf2 + "-" + enemiesOf8);
+			//print (enemiesOf2 + "-" + enemiesOf8);
 
 			//Debug.Log ("enemiesOf8 = " + enemiesOf8);
 

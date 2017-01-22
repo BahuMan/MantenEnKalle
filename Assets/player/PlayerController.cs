@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
     public GameObject blastPrefab;
     public Collider2D ground;
 	public SoundMaster sm;
-    public float jumpForce = 15f;
     private Rigidbody2D thisRigid;
 
 	private List<float> timeStamp = new List<float>();
@@ -40,15 +39,6 @@ public class PlayerController : MonoBehaviour {
 			if (timeStamp.Count > 20) {
 				timeStamp.RemoveAt (0);
 			}
-
-            if (thisRigid.IsTouching(ground))
-            {
-                thisRigid.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            }
-            else
-            {
-                Debug.Log("not grounded");
-            }
         }
 
 		// Calculate feedback
@@ -68,15 +58,15 @@ public class PlayerController : MonoBehaviour {
 
 		if (lastRythm > 0) {
 			groundWave.stampBig ();
-			blast ();
+			blast (lastRythm);
 		} else {
 			groundWave.stampSmall ();
 		}
     }
 
-    private void blast()
+    private void blast(int frq)
     {
-        Instantiate(blastPrefab);
+        Instantiate(blastPrefab).GetComponent<BlastController>().setFrequency(frq);
 
     }
 }
