@@ -12,11 +12,15 @@ public class GroundWaveRenderer : BaseWaveFormRenderer {
 
 	public float wavefrequency = 1f;
 	public float wavealterspeed = -2f;
-	public float waveheight = 0.3f;
+	private float waveheight = 0.3f;
+	public float waveheightsmall = 0.3f;
+	public float waveheightbig = 0.3f;
 
-	public float starttime = 0f;
+	public float starttime = -1000f;
 	public float movespeed = 1;
 	public float xwidth = 0.1f;
+
+	public float stampShift = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -25,12 +29,8 @@ public class GroundWaveRenderer : BaseWaveFormRenderer {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.A)) {
-			starttime = Time.timeSinceLevelLoad;
-		}
-
 		UpdateWave (delegate(float x) {
-			float timerunning = Time.timeSinceLevelLoad-starttime;
+			float timerunning = Time.time-starttime;
 
 			float wavepos = timerunning*movespeed;
 			float y = 0;
@@ -46,5 +46,19 @@ public class GroundWaveRenderer : BaseWaveFormRenderer {
 
 			return new Vector2(y+ybottom, y+ytop);
 		});
+	}
+
+	private void makeWave() {
+		starttime = Time.time + stampShift;
+	}
+
+	public void stampSmall() {
+		waveheight = waveheightsmall;
+		makeWave ();
+	}
+
+	public void stampBig() {
+		waveheight = waveheightbig;
+		makeWave ();
 	}
 }

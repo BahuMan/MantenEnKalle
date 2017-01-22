@@ -16,8 +16,6 @@ public class SoundMaster : MonoBehaviour {
 	//public AudioClip pa;
 	//public AudioClip[] vp;
 
-	public EventNot parseStart;
-
 	// Use this for initialization
 	void Start () {
         source = GetComponent<AudioSource> ();

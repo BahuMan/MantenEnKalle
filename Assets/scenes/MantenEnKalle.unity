@@ -365,6 +365,25 @@ Prefab:
       propertyPath: width
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 1972773868290278, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
+      propertyPath: m_TagString
+      value: ground_foreground
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: stampShift
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: movespeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: waveheightsmall
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
   m_IsPrefabParent: 0
