@@ -345,6 +345,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: uvxrepeat
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: uvyrepeat
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: groundlineheight
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: width
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
   m_IsPrefabParent: 0
