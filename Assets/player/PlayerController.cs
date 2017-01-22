@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     public Collider2D ground;
 	public SoundMaster sm;
     private Rigidbody2D thisRigid;
+    public HealthBarController healthBart;
 
 	private List<float> timeStamp = new List<float>();
 
@@ -81,5 +82,14 @@ public class PlayerController : MonoBehaviour {
 
 		go.GetComponent<SpriteRenderer> ().color = color;
 
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name != "Ground Collider")
+        {
+            Debug.Log("giant was hit by " + collision.gameObject);
+            this.healthBart.LostALive();
+        }
     }
 }
