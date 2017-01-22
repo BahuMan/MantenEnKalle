@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - HurtsEnemies
+  - ground_foreground
   layers:
   - Default
   - TransparentFX

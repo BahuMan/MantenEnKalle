@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour, EventNot {
+public class PlayerController : MonoBehaviour {
 
 	private RythmCheck check;
 
@@ -14,12 +14,18 @@ public class PlayerController : MonoBehaviour, EventNot {
 
 	private List<float> timeStamp = new List<float>();
 
-	private int tempC = 0;
+	private GroundWaveRenderer groundWave;
+
+	private float startOfMaat;
+	private float timeOfNextMaat;
 
 	// Use this for initialization
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();
 		check = GetComponent<RythmCheck> ();
+		groundWave = GameObject.FindWithTag ("ground_foreground").GetComponent<GroundWaveRenderer>();
+		startOfMaat = Time.time;
+		timeOfNextMaat = startOfMaat+4;
 	}
 	
 	// Update is called once per frame
@@ -46,6 +52,11 @@ public class PlayerController : MonoBehaviour, EventNot {
 
 		// Calculate feedback
 		check.rythmCheck ();
+
+		if (Time.time > timeOfNextMaat) {
+			doEndOfMaat ();
+			timeOfNextMaat = timeOfNextMaat+4;
+		}
 	}
 
 	public List<float> getTimeStamp()
@@ -53,22 +64,23 @@ public class PlayerController : MonoBehaviour, EventNot {
         return timeStamp;
     }
 
-	public void measureStarted()
+
+	public void doEndOfMaat()
     {
 		// Do finale rythmCheck
-		check.rythmCheck ();
-    }
+		int lastRythm = check.rythmCheck ();
 
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.collider == ground)
-        {
-            blast();
-        }
+		if (lastRythm > 0) {
+			groundWave.stampBig ();
+			blast ();
+		} else {
+			groundWave.stampSmall ();
+		}
     }
 
     private void blast()
     {
         Instantiate(blastPrefab);
+
     }
 }

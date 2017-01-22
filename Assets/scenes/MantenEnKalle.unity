@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1727820309624304, guid: 2647df7a23e6a5d44a6a621df6526333, type: 2}
   - {fileID: 1285993687380678, guid: 659d6abe0ca5b91429f1977eef6cdd7b, type: 2}
-  enemyInterval: 10
+  enemyInterval: 20
 --- !u!1 &437631717
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +364,25 @@ Prefab:
         type: 2}
       propertyPath: width
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972773868290278, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
+      propertyPath: m_TagString
+      value: ground_foreground
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: stampShift
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: movespeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: waveheightsmall
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
@@ -671,7 +690,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cdc903504a55351449ac804f0a87f023, type: 3}
   - {fileID: 8300000, guid: 66cdc8644a5edc64aac09ec6fea0f551, type: 3}
   - {fileID: 8300000, guid: 46fb8755e532dd44985f19eee56aa0c8, type: 3}
-  bd: {fileID: 8300000, guid: c8910a9733cbc6e4d8d935d42f955262, type: 3}
+  pa: {fileID: 8300000, guid: c8910a9733cbc6e4d8d935d42f955262, type: 3}
   mainTheme: {fileID: 8300000, guid: a37c319d791792e4b8d432eeb954d43a, type: 3}
 --- !u!4 &1150553507
 Transform:
