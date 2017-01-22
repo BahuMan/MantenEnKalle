@@ -91,6 +91,52 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &56483999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 56484001}
+  - component: {fileID: 56484000}
+  m_Layer: 0
+  m_Name: HealthPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &56484000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56483999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828f9ee151a2d3d4582a09f52d8f9681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FilledHeart: {fileID: 1034810233883384, guid: 0a871e284314ab842bc71172e5603f6c,
+    type: 2}
+  EmptyHeart: {fileID: 1033952110189542, guid: 32376095104855a4fb8997604aa0ab0e, type: 2}
+  displacement: 5
+  lives: 10
+  hearts: []
+--- !u!4 &56484001
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56483999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.41, y: 4.57, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &163924780
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +180,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1727820309624304, guid: 2647df7a23e6a5d44a6a621df6526333, type: 2}
   - {fileID: 1076597396075766, guid: 659d6abe0ca5b91429f1977eef6cdd7b, type: 2}
+  - {fileID: 1814864803439146, guid: eafeeb35f68d6b649a6d8147b29f00f2, type: 2}
   enemyInterval: 5
 --- !u!1 &437631717
 GameObject:
@@ -218,6 +265,7 @@ MonoBehaviour:
     type: 2}
   ground: {fileID: 1824965964}
   sm: {fileID: 1150553506}
+  healthBart: {fileID: 56484000}
   colors:
   - {r: 0.64705884, g: 0.6862745, b: 0.8, a: 1}
   - {r: 0.6784314, g: 0.78039217, b: 0.64705884, a: 1}
@@ -766,6 +814,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 66cdc8644a5edc64aac09ec6fea0f551, type: 3}
   - {fileID: 8300000, guid: 46fb8755e532dd44985f19eee56aa0c8, type: 3}
   pa: {fileID: 8300000, guid: c8910a9733cbc6e4d8d935d42f955262, type: 3}
+  vp: {fileID: 8300000, guid: 0140cd8b3e7539746bdd6370f90af0be, type: 3}
   mainTheme: {fileID: 8300000, guid: a37c319d791792e4b8d432eeb954d43a, type: 3}
 --- !u!4 &1150553507
 Transform:
