@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 10
   productGUID: b2c8d0940d978eb4e9fb040275e8abcf
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 3
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Company.ProductName
+  bundleIdentifier: com.coffeetocode.MantenEnKalle
   bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0

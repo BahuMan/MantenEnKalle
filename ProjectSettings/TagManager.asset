@@ -42,9 +42,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 870064275
+    locked: 0
   - name: WavesLayer
     uniqueID: 50891287
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemies
+    uniqueID: 1566374907
+    locked: 0
+  - name: Foreground
+    uniqueID: 455947383
     locked: 0
