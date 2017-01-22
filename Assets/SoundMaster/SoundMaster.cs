@@ -19,6 +19,9 @@ public class SoundMaster : MonoBehaviour {
     public AudioClip mainTheme;
 	private GameController controller;
 
+	public event BeatListener beatListeners;
+	public delegate void BeatListener (float beatDuration);
+
 	// Use this for initialization
 	void Start () {
         sourceMain = GetComponent<AudioSource> ();
@@ -67,7 +70,9 @@ public class SoundMaster : MonoBehaviour {
 			} else
 				source2.mute = true;
 
-
+			if (beatListeners != null) {
+				beatListeners (BEAT_DURATION);
+			}
 
 		}
 

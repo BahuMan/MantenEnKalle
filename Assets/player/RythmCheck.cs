@@ -13,29 +13,38 @@ public class RythmCheck : MonoBehaviour {
 	public float SCORE = 0;
 	public int TICK = 0;
 
+	public float maatMeasuring = 0;
+
 	public bool doCheckWithFase = true;
 
 	void Start() {
 		player = GetComponent<PlayerController> ();
+		SoundMaster sm = GameObject.FindWithTag ("SoundMaster").GetComponent<SoundMaster>();
+		sm.beatListeners += delegate(float beatDuration) {
+			// Do as if the music started > 2 beats ago (easier for calculations)
+			maatMeasuring = Time.time-beatDuration*10;
+		};
 	}
 
 	//rythmcheck method
 	public int rythmCheck()
 	{
+		float timeSinceMusicStart = Time.time - maatMeasuring;
+
 		//copying timestamps from playercontroller
 		List<float> timeStamp = player.getTimeStamp ();
 		List<float> timeStamp2 = new List<float>();
 		float startOfRange = Time.time - period * 1.2f;
 		foreach (float spacebarTime in timeStamp) {
 			if (spacebarTime > startOfRange) {
-				timeStamp2.Add (spacebarTime);
+				timeStamp2.Add (spacebarTime-maatMeasuring);
 			}
 		}
 
 		BESTRYTHM = -1;
 		SCORE = 0;
 
-		TICK = (int)((Time.time * 2) % 2);
+		TICK = (int)((timeSinceMusicStart * 2) % 2);
 
 		for (int i = 0; i < tapsPerMaat.Count; i++) {
 			int tapCount = tapsPerMaat [i];

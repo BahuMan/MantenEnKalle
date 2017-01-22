@@ -16,16 +16,17 @@ public class PlayerController : MonoBehaviour {
 
 	private GroundWaveRenderer groundWave;
 
-	private float startOfMaat;
-	private float timeOfNextMaat;
+	public float period = 2;
 
 	// Use this for initialization
 	void Start () {
         thisRigid = GetComponent<Rigidbody2D>();
 		check = GetComponent<RythmCheck> ();
 		groundWave = GameObject.FindWithTag ("ground_foreground").GetComponent<GroundWaveRenderer>();
-		startOfMaat = Time.time;
-		timeOfNextMaat = startOfMaat+4;
+		SoundMaster sm = GameObject.FindWithTag ("SoundMaster").GetComponent<SoundMaster>();
+		sm.beatListeners += delegate(float beatDuration) {
+			doEndOfMaat ();
+		};
 	}
 	
 	// Update is called once per frame
@@ -52,11 +53,6 @@ public class PlayerController : MonoBehaviour {
 
 		// Calculate feedback
 		check.rythmCheck ();
-
-		if (Time.time > timeOfNextMaat) {
-			doEndOfMaat ();
-			timeOfNextMaat = timeOfNextMaat+4;
-		}
 	}
 
 	public List<float> getTimeStamp()

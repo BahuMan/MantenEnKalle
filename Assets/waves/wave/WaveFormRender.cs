@@ -14,11 +14,34 @@ public class WaveFormRender : BaseWaveFormRenderer {
 
 	public float power = 4f;
 
+	public float maatMeasuring = 0;
+
+	public float curveFaseShift = 0;
+
 	public AnimationCurve wavemultiplier = new AnimationCurve();
 
 	// Use this for initialization
 	void Start () {
 		InitMesh ();
+
+		SoundMaster sm = GameObject.FindWithTag ("SoundMaster").GetComponent<SoundMaster>();
+		sm.beatListeners += delegate(float beatDuration) {
+			// Do as if the music started > 2 beats ago (easier for calculations)
+			maatMeasuring = Time.time-beatDuration*10;
+		};
+
+		int iters = 200;
+		float max = -1;
+		float maxPercent = 0;
+		for (int i = 0; i <= iters; i++) {
+			float t = i * 1f / iters;
+			float multiplier = wavemultiplier.Evaluate(t);
+			if(multiplier > max) {
+				max = multiplier;
+				maxPercent = t;
+			}
+		}
+		curveFaseShift = maxPercent;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +52,7 @@ public class WaveFormRender : BaseWaveFormRenderer {
 				multiplier = 0;
 			}
 
-			float y = Mathf.Sin ((t+speed*Time.timeSinceLevelLoad)*Mathf.PI*2*frequency+Mathf.PI/2);
+			float y = Mathf.Sin (((t-curveFaseShift)*speed+(Time.time-maatMeasuring+.5f))*Mathf.PI*2*frequency+Mathf.PI/2);
 			if(y<0) {
 				y = 0f;
 			} else {

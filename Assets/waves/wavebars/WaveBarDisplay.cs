@@ -24,7 +24,8 @@ public class WaveBarDisplay : MonoBehaviour {
 			waverenderers [i] = waves [i].GetComponent<WaveFormRender> ();
 
 			waverenderers [i].waveheight = heightOfBars * percentUsed / 2f / waveFreq.Count;
-			waverenderers [i].frequency = waverenderers [i].width/maatWidth * waveFreq [i];
+			waverenderers [i].frequency = waveFreq [i];
+			//waverenderers [i].speed = waverenderers [i].width/maatWidth * 
 			Transform waveTransform = waves [i].transform;
 			waveTransform.localPosition = new Vector3(0, (i+0.5f) * heightOfBars / waveFreq.Count-heightOfBars, 0);
 		}

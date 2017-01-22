@@ -98,9 +98,11 @@ MonoBehaviour:
   uvyrepeat: 2
   lineheight: 0.1
   frequency: 20
-  speed: 0.1
+  speed: 3
   waveheight: 1
   power: 3
+  maatMeasuring: 0
+  curveFaseShift: 0
   wavemultiplier:
     serializedVersion: 2
     m_Curve:
