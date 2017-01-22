@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour {
     public GameObject particleEffect;
     public GameController theController;
     private Rigidbody2D thisRigid;
+    public float jumpForce;
+    public float littleJumpForce;
 
 	// Use this for initialization
 	void Start () {
@@ -27,15 +29,61 @@ public class EnemyController : MonoBehaviour {
         return frequency;
     }
 
-    public void OnCollisionEnter2D(Collision2D col)
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.collider.gameObject.tag == "HurtsEnemies")
+        checkContact(col);
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        checkContact(collision.collider);
+    }
+
+    private void checkContact(Collider2D col)
+    {
+        if (col.gameObject.tag == "HurtsEnemies")
         {
-            theController.enemyDied(this); //inform the controller about my death
-            GameObject go = Instantiate(this.particleEffect);
-            go.transform.position = transform.position;
-            Destroy(go, 4);
-            Destroy(gameObject);
+
+            BlastController blast = col.gameObject.GetComponent<BlastController>();
+            if (blast != null)
+            {
+                Debug.Log("getting hurt by frequency " + blast.getFrequency());
+                //depending on blast frequency, take different action
+                if (blast.getFrequency() < 0)
+                {
+                    //this is a weenie blast; little jump
+                    jump(littleJumpForce);
+                }
+                else if (blast.getFrequency() == frequency)
+                {
+                    selfDestruct();
+                }
+                else
+                {
+                    jump(jumpForce);
+                }
+            }
+            else
+            {
+                Debug.Log("getting hurt - by a giant?");
+                //a damaging object that is not a blast can only be the giant; here we self-destruct
+                selfDestruct();
+            }
         }
+
+    }
+
+    public void selfDestruct()
+    {
+        theController.enemyDied(this); //inform the controller about my death
+        GameObject go = Instantiate(this.particleEffect);
+        go.transform.position = transform.position;
+        Destroy(go, 4);
+        Destroy(gameObject);
+    }
+
+    public void jump(float force)
+    {
+        thisRigid.AddForce(this.transform.up * force, ForceMode2D.Impulse);
     }
 }

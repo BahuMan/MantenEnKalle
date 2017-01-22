@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour {
 	public int GetNrEnemiesForFrequency(int frequency) {
         if (enemiesPerFrequency.ContainsKey(frequency))
         {
-            Debug.Log("#enemies for freq " + frequency + " = " + enemiesPerFrequency[frequency].Count);
+            //Debug.Log("#enemies for freq " + frequency + " = " + enemiesPerFrequency[frequency].Count);
             return enemiesPerFrequency[frequency].Count;
         }
         else return 0;
