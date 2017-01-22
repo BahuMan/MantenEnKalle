@@ -134,7 +134,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1727820309624304, guid: 2647df7a23e6a5d44a6a621df6526333, type: 2}
   - {fileID: 1076597396075766, guid: 659d6abe0ca5b91429f1977eef6cdd7b, type: 2}
-  enemyInterval: 20
+  enemyInterval: 5
 --- !u!1 &437631717
 GameObject:
   m_ObjectHideFlags: 0
