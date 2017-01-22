@@ -6,6 +6,7 @@ public class SoundMaster : MonoBehaviour {
     const float BEAT_DURATION = 2;
     const float MAIN_DURATION = 24;
 	int enemiesOf8;
+	int enemiesOf4;
 	int enemiesOf2;
 
 	private float nextActionTimer = 0;
@@ -16,6 +17,7 @@ public class SoundMaster : MonoBehaviour {
 	private AudioSource source2;
 	public AudioClip[] vl;
 	public AudioClip pa;
+	public AudioClip vp;
     public AudioClip mainTheme;
 	private GameController controller;
 
@@ -27,7 +29,8 @@ public class SoundMaster : MonoBehaviour {
         sourceMain = GetComponent<AudioSource> ();
 		source8 = gameObject.AddComponent < AudioSource > ();
 		source8.mute = true;
-		//source4 = gameObject.AddComponent < AudioSource > ();
+		source4 = gameObject.AddComponent < AudioSource > ();
+		source4.mute = true;
 		source2 = gameObject.AddComponent < AudioSource > ();
 		source2.mute = true;
 		controller = GameObject.FindGameObjectWithTag ("GameController").GetComponent < GameController > ();
@@ -50,7 +53,7 @@ public class SoundMaster : MonoBehaviour {
 			//Debug.Log ("CurrentTime = " + Time.time);
 
 			enemiesOf8 = controller.GetNrEnemiesForFrequency (8);
-			//int enemiesOf4 = controller.GetNrEnemiesForFrequency (4);
+			enemiesOf4 = controller.GetNrEnemiesForFrequency (4);
 			enemiesOf2 = controller.GetNrEnemiesForFrequency (2);
 			//print (enemiesOf2 + "-" + enemiesOf8);
 
@@ -59,6 +62,7 @@ public class SoundMaster : MonoBehaviour {
 			int selectViolin = Random.Range (0, vl.Length - 1);
 			source8.PlayOneShot (vl [selectViolin]);
 			source2.PlayOneShot (pa);
+			source4.PlayOneShot (vp);
 
 			if (enemiesOf8 > 0) {
 				source8.mute = false;
@@ -69,6 +73,11 @@ public class SoundMaster : MonoBehaviour {
 				source2.mute = false;
 			} else
 				source2.mute = true;
+
+			if (enemiesOf4 > 0) {
+				source4.mute = false;
+			} else
+				source4.mute = true;
 
 			if (beatListeners != null) {
 				beatListeners (BEAT_DURATION);
