@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour {
 	void Update () {
         if (Time.time > nextEnemyTime)
         {
-            Debug.Log("spawning");
             nextEnemyTime = Time.time + enemyInterval;
             spawnEnemy();
         }
@@ -45,16 +44,21 @@ public class GameController : MonoBehaviour {
     public void enemyDied(EnemyController enemy)
     {
         int frq = enemy.getFrequency();
-        List<EnemyController> flist = enemiesPerFrequency[frq];
         if (!enemiesPerFrequency.ContainsKey(frq))
         {
             Debug.LogError("Could not find list for frequency " + frq);
+        }
+        else
+        {
+            List<EnemyController> flist = enemiesPerFrequency[frq];
+            flist.Remove(enemy);
         }
     }
 
 	public int GetNrEnemiesForFrequency(int frequency) {
         if (enemiesPerFrequency.ContainsKey(frequency))
         {
+            Debug.Log("#enemies for freq " + frequency + " = " + enemiesPerFrequency[frequency].Count);
             return enemiesPerFrequency[frequency].Count;
         }
         else return 0;
