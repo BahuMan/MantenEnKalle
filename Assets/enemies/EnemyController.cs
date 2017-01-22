@@ -76,9 +76,12 @@ public class EnemyController : MonoBehaviour {
     public void selfDestruct()
     {
         theController.enemyDied(this); //inform the controller about my death
-        GameObject go = Instantiate(this.particleEffect);
-        go.transform.position = transform.position;
-        Destroy(go, 4);
+        if (this.particleEffect != null)
+        {
+            GameObject go = Instantiate(this.particleEffect);
+            go.transform.position = transform.position;
+            Destroy(go, 4);
+        }
         Destroy(gameObject);
     }
 
