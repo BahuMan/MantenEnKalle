@@ -236,6 +236,7 @@ MonoBehaviour:
   BESTRYTHM: 0
   SCORE: 0
   TICK: 0
+  doCheckWithFase: 1
 --- !u!4 &453258884 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4708645868668298, guid: f3b5833e8d0a81a4ca763ba477da5c81,
@@ -343,6 +344,26 @@ Prefab:
     - target: {fileID: 4827632687142948, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: uvxrepeat
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: uvyrepeat
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: groundlineheight
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114206714922912872, guid: c5ec0902673915640b77a86b56ad8d5b,
+        type: 2}
+      propertyPath: width
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c5ec0902673915640b77a86b56ad8d5b, type: 2}
