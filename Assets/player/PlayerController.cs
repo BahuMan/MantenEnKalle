@@ -50,9 +50,6 @@ public class PlayerController : MonoBehaviour {
                 Debug.Log("not grounded");
             }
         }
-
-		// Calculate feedback
-		check.rythmCheck ();
 	}
 
 	public List<float> getTimeStamp()

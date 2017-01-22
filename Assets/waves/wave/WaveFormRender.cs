@@ -52,7 +52,7 @@ public class WaveFormRender : BaseWaveFormRenderer {
 				multiplier = 0;
 			}
 
-			float y = Mathf.Sin (((t-curveFaseShift)*speed+(Time.time-maatMeasuring+.5f))*Mathf.PI*2*frequency+Mathf.PI/2);
+			float y = Mathf.Sin (((t-curveFaseShift)*speed+(Time.time-maatMeasuring))*Mathf.PI*2*frequency+Mathf.PI/2);
 			if(y<0) {
 				y = 0f;
 			} else {
