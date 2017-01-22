@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 
 	private GroundWaveRenderer groundWave;
 
+	public List<Color> colors;
+
 	public float period = 2;
 
 	// Use this for initialization
@@ -63,7 +65,21 @@ public class PlayerController : MonoBehaviour {
 
     private void blast(int frq)
     {
-        Instantiate(blastPrefab).GetComponent<BlastController>().setFrequency(frq);
+		GameObject go = Instantiate (blastPrefab);
+		go.GetComponent<BlastController>().setFrequency(frq);
+		Color color;
+		if (frq == 2) {
+			color = colors[0];
+		} else if (frq == 4) {
+			color = colors[1];
+		} else if (frq == 8) {
+			color = colors[2];
+		} else {
+			color = Color.cyan;
+		}
+
+
+		go.GetComponent<SpriteRenderer> ().color = color;
 
     }
 }

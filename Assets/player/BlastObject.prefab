@@ -70,13 +70,14 @@ MonoBehaviour:
   blastSpeed: 50
   maxX: 250
   blastFrequency: 0
+  upForce: 0
 --- !u!212 &212697965896347324
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018009499508884}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_MotionVectors: 1
