@@ -107,9 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 8
-  speed: 2
+  speed: 1.5
   particleEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   theController: {fileID: 0}
+  jumpForce: 0
+  littleJumpForce: 0
 --- !u!212 &212880053921388912
 SpriteRenderer:
   m_ObjectHideFlags: 1
