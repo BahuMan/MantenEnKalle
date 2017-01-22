@@ -4,4 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/scenes/GGJintro.unity
+  - enabled: 1
+    path: Assets/scenes/MainIntro.unity
+  - enabled: 1
+    path: Assets/scenes/MantenEnKalle.unity
+  - enabled: 1
+    path: Assets/scenes/GameOver.unity
